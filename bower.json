@@ -1,0 +1,15 @@
+{
+  "name": "ertrzyiks.pl",
+  "version": "0.0.1",
+  "homepage": "http://ertrzyiks.pl",
+  "authors": [
+    "Mateusz Derks <mateusz.derks@gmail.com>"
+  ],
+  "description": "My website",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "fontawesome": "~4.2.0",
+    "normalize.css": "~3.0.2"
+  }
+}

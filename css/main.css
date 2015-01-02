@@ -1,0 +1,27 @@
+h1 {
+    color: #3E81E4;
+}
+
+h2 {
+    font-size: 1em;
+    color: #333333;
+    font-weight: normal;
+}
+
+a {
+    color: #35609F;
+    text-decoration: none;
+}
+
+.container {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 8%;
+
+    text-align: center;
+}
+
+.social-link {
+    font-size: 1.4em;
+}
