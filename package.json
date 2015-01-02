@@ -1,0 +1,24 @@
+{
+  "name": "ertrzyiks.pl",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "install": "./node_modules/.bin/bower install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ertrzyiks/ertrzyiks.pl.git"
+  },
+  "author": "ertrzyiks <mateusz.derks@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ertrzyiks/ertrzyiks.pl/issues"
+  },
+  "homepage": "https://github.com/ertrzyiks/ertrzyiks.pl",
+  "dependencies": {
+    "bower": "^1.3.12",
+    "express": "^4.10.6"
+  }
+}
