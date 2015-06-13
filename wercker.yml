@@ -20,7 +20,7 @@ deploy:
     - add-ssh-key:
         keyname: DIGITAL_OCEAN
 
-    - git-push:
+    - leipert/git-push@0.7.6:
         host: $GIT_DEPLOY_HOST
         user: $GIT_DEPLOY_USER
         repo: $GIT_DEPLOY_APP
