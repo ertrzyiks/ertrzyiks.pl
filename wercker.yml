@@ -10,3 +10,21 @@ build:
         code: |
           echo "node version $(node -v) running"
           echo "npm version $(npm -v) running"
+
+  after-steps:
+    - wantedly/pretty-slack-notify:
+        webhook_url: $SLACK_WEBHOOK_URL
+
+deploy:
+  steps:
+    - add-ssh-key:
+        keyname: DIGITAL_OCEAN
+
+    - git-push:
+        host: $GIT_DEPLOY_HOST
+        user: $GIT_DEPLOY_USER
+        repo: $GIT_DEPLOY_APP
+
+  after-steps:
+    - wantedly/pretty-slack-notify:
+        webhook_url: $SLACK_WEBHOOK_URL
