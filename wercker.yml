@@ -1,4 +1,4 @@
-box: node
+box: wercker/nodejs
 
 build:
   steps:
@@ -12,19 +12,24 @@ build:
           echo "npm version $(npm -v) running"
 
   after-steps:
-    - wantedly/pretty-slack-notify:
-        webhook_url: $SLACK_WEBHOOK_URL
+    - turistforeningen/slack-notifier:
+        url: $SLACK_WEBHOOK_URL
 
 deploy:
   steps:
+    - add-to-known_hosts:
+        hostname: $GIT_DEPLOY_HOST
+
     - add-ssh-key:
         keyname: DIGITAL_OCEAN
 
-    - pheres/git-push@0.4.10:
-        host: $GIT_DEPLOY_HOST
-        user: $GIT_DEPLOY_USER
-        repo: $GIT_DEPLOY_APP
+    - script:
+        name: push to dokku
+        code: |
+          echo "Pushing to: $GIT_DEPLOY_USER@$GIT_DEPLOY_HOST:$GIT_DEPLOY_APP"
+          git remote add dokku $GIT_DEPLOY_USER@$GIT_DEPLOY_HOST:$GIT_DEPLOY_APP
+          git push dokku master -f
 
   after-steps:
-    - wantedly/pretty-slack-notify:
-        webhook_url: $SLACK_WEBHOOK_URL
+    - turistforeningen/slack-notifier:
+        url: $SLACK_WEBHOOK_URL
