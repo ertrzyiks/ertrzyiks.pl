@@ -1,5 +1,5 @@
 h1 {
-    color: #3E81E4;
+    color: #4aadd6;
     display: inline;
 }
 
@@ -10,31 +10,28 @@ h2 {
 }
 
 a {
-    color: #35609F;
+    color: #4aadd6;
     text-decoration: none;
 }
 
-.row {
-    color: #EEEEEE;
-    display: block;
-    font-size: 110%;
-    padding: 1.2em 0.8em;
+html {
+    height: 100%;
 }
-
-.purple.row {
-    background-color: #9e89b9;
-}
-
-.green.row {
-    background-color: #80af7d;
-}
-
-.blue.row {
-    background-color: #689ada;
+body {
+    min-height: 100%;
+    display: flex;
+    align-items: center;
 }
 
 .contact {
+    padding: 2em 1em;
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
+}
+
+@media (max-width: 700px) {
+    .contact {
+        text-align: center;
+    }
 }
