@@ -1,0 +1,59 @@
+<!doctype html>
+html.no-js(lang="")
+    head
+        meta(charset="utf-8")
+        meta(http-equiv="X-UA-Compatible" content="IE=edge")
+        title
+            | ertrzyiks - Mateusz Derks
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        meta(name="description" content="Private website of ertrzyiks")
+
+        meta(name="twitter:card" content="summary")
+        meta(name="twitter:title" content="ertrzyiks.me")
+        meta(name="twitter:description" content="Private website of ertrzyiks")
+
+        meta(property="og:type" content="article")
+        meta(property="og:title" content="ertrzyiks.me")
+        meta(property="og:description" content="Private website of ertrzyiks")
+
+        link(rel="stylesheet" href="../bower_components/normalize.css/normalize.css")
+        link(rel="stylesheet" href="../css/main.css")
+    body
+        div.contact
+            h1
+                | ertrzyiks
+
+            h2
+                | Mateusz Derks <em>&lt;mateusz.derks[at]gmail.com&gt;</em>
+
+            a.contact-link(href="http://github.com/ertrzyiks" title="Follow me on Github")
+                include ./icons/github.svg
+                | Github
+
+            a.contact-link(href="http://twitter.com/ertrzyiks" title="Follow me on Twitter")
+                include ./icons/twitter.svg
+                | Twitter
+
+            a.contact-link(href="https://blog.ertrzyiks.me")
+                include ./icons/book.svg
+                | Blog
+
+        div.posts-wrapper
+            h3
+                | Recent blog posts:
+
+            ul.posts
+                each post in posts
+                    li.post
+                        a.post-link(href=post.url)
+                            div.post-thumbnail
+                                img.post-thumbnail_image(src=post.image alt='Hand drawn picture')
+                            div.post-title
+                                = post.title
+        script.
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+                    function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+                e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+                e.src='//www.google-analytics.com/analytics.js';
+                r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-33547155-1','auto');ga('send','pageview');
